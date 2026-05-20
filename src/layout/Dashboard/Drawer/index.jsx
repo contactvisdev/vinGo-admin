@@ -51,8 +51,7 @@ export default function MainDrawer() {
               navigate('/dashboard');
             }}
           >
-            <Image src={logo} fluid className="logo logo-lg" alt="logo" />
-            <span className="fw-semibold fs-5 text-4xl text-white">X-7</span>
+            <Image src="/logo.png" fluid className="logo logo-lg" alt="logo" style={{ maxHeight: '50px' }} />
           </a>
         </div>
 
