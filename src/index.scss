@@ -1,0 +1,19 @@
+@import './assets/fonts/phosphor/regular/style.css';
+@import './assets/fonts/tabler-icons.min.css';
+
+@import 'simplebar-react/dist/simplebar.min.css';
+@import './assets/scss/themes/plugins/scrollbar';
+
+@import 'assets/scss/style.scss';
+@import 'assets/scss/style-preset.scss';
+@import './global.scss';
+
+.ql-container.ql-snow {
+    min-height: 200px !important;
+}
+.ql-editor{
+    min-height: 200px !important;
+}
+.ql-editor.ql-blank {
+    min-height: 200px !important;
+}

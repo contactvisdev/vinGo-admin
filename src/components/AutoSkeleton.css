@@ -1,0 +1,121 @@
+.auto-skeleton {
+  --auto-sk-base: var(--color-neutral-200, #e5e7eb);
+  --auto-sk-shine: var(--color-neutral-100, #f3f4f6);
+  position: relative;
+  width: 100%;
+  pointer-events: none;
+  user-select: none;
+}
+
+/* ── Skeleton bone (leaf block) ── */
+.auto-skeleton__bone {
+  background-color: var(--auto-sk-base);
+}
+
+/* ── Shimmer animation ── */
+@keyframes auto-skeleton-shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.auto-skeleton--shimmer .auto-skeleton__bone {
+  background: linear-gradient(
+    90deg,
+    var(--auto-sk-base) 25%,
+    var(--auto-sk-shine) 37%,
+    var(--auto-sk-base) 63%
+  );
+  background-size: 200% 100%;
+  animation: auto-skeleton-shimmer 1.5s ease-in-out infinite;
+}
+
+/* ── Pulse animation ── */
+@keyframes auto-skeleton-pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+.auto-skeleton--pulse .auto-skeleton__bone {
+  animation: auto-skeleton-pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* ── Wave animation ── */
+@keyframes auto-skeleton-wave {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.auto-skeleton--wave .auto-skeleton__bone {
+  background: linear-gradient(
+    90deg,
+    var(--auto-sk-base) 0%,
+    var(--auto-sk-shine) 20%,
+    var(--auto-sk-base) 40%
+  );
+  background-size: 200% 100%;
+  animation: auto-skeleton-wave 2.5s ease-in-out infinite;
+}
+
+/* ── Fade animation ── */
+@keyframes auto-skeleton-fade {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.3;
+  }
+}
+
+.auto-skeleton--fade .auto-skeleton__bone {
+  animation: auto-skeleton-fade 1.8s ease-in-out infinite;
+}
+
+/* ── Slide animation ── */
+@keyframes auto-skeleton-slide {
+  0% {
+    transform: translateX(-8px);
+    opacity: 0.4;
+  }
+  50% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(8px);
+    opacity: 0.4;
+  }
+}
+
+.auto-skeleton--slide .auto-skeleton__bone {
+  animation: auto-skeleton-slide 1.6s ease-in-out infinite;
+}
+
+/* ── None (static) ── */
+.auto-skeleton--none .auto-skeleton__bone {
+  animation: none;
+}
+
+/* ── Accessibility ── */
+@media (prefers-reduced-motion: reduce) {
+  .auto-skeleton--shimmer .auto-skeleton__bone,
+  .auto-skeleton--pulse .auto-skeleton__bone,
+  .auto-skeleton--wave .auto-skeleton__bone,
+  .auto-skeleton--fade .auto-skeleton__bone,
+  .auto-skeleton--slide .auto-skeleton__bone {
+    animation: none !important;
+  }
+}
