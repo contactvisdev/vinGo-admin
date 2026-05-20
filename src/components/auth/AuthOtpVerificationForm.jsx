@@ -76,9 +76,9 @@ export default function AuthOtpVerificationForm({ className }) {
     <MainCard className="mb-0">
       <div className="d-flex justify-content-center align-items-center py-3">
         <a className="b-brand d-flex align-items-center  text-decoration-none">
-          <Image src={Logo} fluid className="logo logo-lg" alt="logo" />
+          <Image src="/logo.png" fluid className="logo logo-lg" alt="logo" style={{ maxHeight: '50px' }} />
           <span className="fw-semibold fs-5 text-4xl" style={{ color: '#00C2FF' }}>
-            X-7
+            vinGo
           </span>
         </a>
       </div>
