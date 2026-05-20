@@ -81,17 +81,17 @@ export default function AuthLoginForm({ className, link }) {
 
   return (
     <MainCard className="mb-0">
-      <div className="d-flex justify-content-center align-items-center py-3">
+      <div className="d-flex justify-content-center align-items-center">
         <a className="b-brand d-flex align-items-center  text-decoration-none">
-          <Image src={Logo} fluid className="logo logo-lg" alt="logo" />
-          <span className="fw-semibold fs-5 text-4xl" style={{ color: '#00C2FF' }}>
-            X-7
-          </span>
+          <Image src="/logo.png" fluid className="logo logo-lg" alt="logo" style={{ maxHeight: '50px' }} />
+          {/* <span className="fw-semibold fs-5 text-4xl" style={{ color: '#00C2FF' }}>
+            vinGo
+          </span> */}
         </a>
       </div>
       <FormProvider {...methods}>
         <Form onSubmit={handleSubmit(onSubmit)}>
-          <h4 className={`text-center f-w-500 mt-4 mb-3 ${className}`}>Login</h4>
+          <h4 className={`text-center f-w-500 ${className}`}>Admin Login</h4>
           <TextInput
             name="email"
             type="email"
@@ -128,7 +128,7 @@ export default function AuthLoginForm({ className, link }) {
                 className={`input-primary ${className ? className : 'text-muted'} `}
               />
             </Form.Group>
-            <Link to={'/forgot-password'} className={`text-secondary f-w-400 mb-0  ${className}`}>
+            <Link to={'/forgot-password'} className={`text-sucess f-w-400 mb-0  ${className}`}>
               Forgot Password?
             </Link>
           </Stack>
